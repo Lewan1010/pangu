@@ -58,7 +58,6 @@ int Chars2NumsReverse(const char *str)
         num += Char2Digit(str[i]) * base;
         base *= DECIMAL_BASE;
     }
-    printf("\r\n %s %u %u", str, size, num);
     return num;
 }
 
@@ -147,6 +146,7 @@ void StringsUnion(char strs[][MAC_BUFFER_LEN], int n, char *connector, char *out
     for (i = 0; i < n; i++) {
         startPos += sprintf_s(outStr + startPos, outLen - startPos,"%s%s", strs[i], connector);
     }
+    outStr[strlen(outStr) - strlen(connector) - 1] = 0;
     return;
 }
 
